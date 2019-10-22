@@ -6,15 +6,17 @@ output:
 ---
 
 ```{r Setup, include = FALSE}
-knitr::opts_chunk$set(fig.path = "images/img-", warning = FALSE, message = FALSE, fig.height = 7, fig.align = "center")
+knitr::opts_chunk$set(fig.path = "images/img-", warning = FALSE, message = FALSE,
+                      fig.height = 7, fig.align = "center")
 library(readr)
 library(dplyr)
-library(pander)
 library(ggplot2)
 library(ggthemes)
 library(purrr)
 library(tidyr)
 library(stringr)
+library(knitr)
+options(knitr.table.format = 'markdown')
 ```
 
 ## Introduction
@@ -98,9 +100,9 @@ corr_strong <- corr %>%
 
 **Table 1. Correlations between survey results and average SAT scores.**
 ```{r CorrelationSummary, echo = FALSE}
-pander(corr_strong %>%
-         rename(`Survey Question` = variable,
-                `Correlation to Avg SAT Score` = avg_sat_score))
+kable(corr_strong %>%
+        rename(`Survey Question` = variable,
+               `Correlation to Avg SAT Score` = avg_sat_score))
 ```
 
 Scatter plots were created to visualize these correlations (Figure 1). From the plots, it can be seen that high schools with higher average SAT scores (above 1500) generally have higher perceived quality (survey scores greater than or equal to 7 out of 10).
@@ -170,22 +172,22 @@ corr_saf <- create_corr("Safety.and.Respect")
 
 **Table 2. Academic score: Correlations between parent, student and teacher responses.**
 ```{r AcademicCorrelationMatrix, echo = FALSE}
-pander(corr_aca)
+kable(corr_aca)
 ```
 
 **Table 3. Communication score: Correlations between parent, student and teacher responses.**
 ```{r CommunicationCorrelationMatrix, echo = FALSE}
-pander(corr_com)
+kable(corr_com)
 ```
 
 **Table 4. Engagement score: Correlations between parent, student and teacher responses.**
 ```{r EngagementCorrelationMatrix, echo = FALSE}
-pander(corr_eng)
+kable(corr_eng)
 ```
 
 **Table 5. Safety and Respect score: Correlations between parent, student and teacher responses.**
 ```{r SafetyCorrelationMatrix, echo = FALSE}
-pander(corr_saf)
+kable(corr_saf)
 ```
 
 The communication score (Table 3) shows the lowest correlations between correspondent groups compared to the other survey results. In particular, the correlation between student and teacher response is quite low. Taking a look at this further (in Figure 3), it can be seen that teacher responses are often lower than the corresponding student response.
@@ -205,5 +207,5 @@ ggplot(data = combined) +
 
 Suggestions for future work include:
 
-- Comparison of survey results with high school graduation rates and other demographic data, including poverty level.
-- A detailed look at the highest and lowest scoring schools.
+* Comparison of survey results with high school graduation rates and other demographic data, including poverty level.
+* A detailed look at the highest and lowest scoring schools.

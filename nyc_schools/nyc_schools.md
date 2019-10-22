@@ -1,11 +1,4 @@
----
-title: "Exploring Perceptions of High School Quality in NYC"
-output: 
-  html_document:
-    keep_md: true
----
-
-
+# Exploring Perceptions of High School Quality in NYC
 
 ## Introduction
 
@@ -19,7 +12,6 @@ The datasets used in this analysis were obtained from:
 * [NYC OpenData](https://data.cityofnewyork.us/Education/2011-NYC-School-Survey/mnz3-dyi8)
 
 Data was imported into R as dataframes using:
-
 
 ```r
 demographic <- read_csv('combined.csv')
@@ -94,17 +86,12 @@ corr_strong <- corr %>%
 
 **Table 1. Correlations between survey results and average SAT scores.**
 
----------------------------------------------------------------------
-           Survey Question              Correlation to Avg SAT Score 
--------------------------------------- ------------------------------
-  Safety.and.Respect.Score.Teachers                0.3091            
-
-  Safety.and.Respect.Score.Students                0.2773            
-
- Academic.Expectations.Score.Students              0.2926            
-
-    Safety.and.Respect.Score.Total                 0.276             
----------------------------------------------------------------------
+|Survey Question                      | Correlation to Avg SAT Score|
+|:------------------------------------|----------------------------:|
+|Safety.and.Respect.Score.Teachers    |                    0.3091444|
+|Safety.and.Respect.Score.Students    |                    0.2772681|
+|Academic.Expectations.Score.Students |                    0.2925880|
+|Safety.and.Respect.Score.Total       |                    0.2760410|
 
 Scatter plots were created to visualize these correlations (Figure 1). From the plots, it can be seen that high schools with higher average SAT scores (above 1500) generally have higher perceived quality (survey scores greater than or equal to 7 out of 10).
 
@@ -142,51 +129,35 @@ corr_saf <- create_corr("Safety.and.Respect")
 
 **Table 2. Academic score: Correlations between parent, student and teacher responses.**
 
-----------------------------------------------
-    &nbsp;      Parents   Teachers   Students 
--------------- --------- ---------- ----------
- **Parents**       1       0.4191     0.6798  
-
- **Teachers**   0.4191       1        0.4089  
-
- **Students**   0.6798     0.4089       1     
-----------------------------------------------
+|         |   Parents|  Teachers|  Students|
+|:--------|---------:|---------:|---------:|
+|Parents  | 1.0000000| 0.4190859| 0.6798373|
+|Teachers | 0.4190859| 1.0000000| 0.4089070|
+|Students | 0.6798373| 0.4089070| 1.0000000|
 
 **Table 3. Communication score: Correlations between parent, student and teacher responses.**
 
-----------------------------------------------
-    &nbsp;      Parents   Teachers   Students 
--------------- --------- ---------- ----------
- **Parents**       1       0.2412     0.5688  
-
- **Teachers**   0.2412       1        0.1683  
-
- **Students**   0.5688     0.1683       1     
-----------------------------------------------
+|         |   Parents|  Teachers|  Students|
+|:--------|---------:|---------:|---------:|
+|Parents  | 1.0000000| 0.2411942| 0.5687691|
+|Teachers | 0.2411942| 1.0000000| 0.1683019|
+|Students | 0.5687691| 0.1683019| 1.0000000|
 
 **Table 4. Engagement score: Correlations between parent, student and teacher responses.**
 
-----------------------------------------------
-    &nbsp;      Parents   Teachers   Students 
--------------- --------- ---------- ----------
- **Parents**       1       0.3297     0.6076  
-
- **Teachers**   0.3297       1        0.3578  
-
- **Students**   0.6076     0.3578       1     
-----------------------------------------------
+|         |   Parents|  Teachers|  Students|
+|:--------|---------:|---------:|---------:|
+|Parents  | 1.0000000| 0.3296697| 0.6075781|
+|Teachers | 0.3296697| 1.0000000| 0.3578421|
+|Students | 0.6075781| 0.3578421| 1.0000000|
 
 **Table 5. Safety and Respect score: Correlations between parent, student and teacher responses.**
 
-----------------------------------------------
-    &nbsp;      Parents   Teachers   Students 
--------------- --------- ---------- ----------
- **Parents**       1       0.4905     0.7324  
-
- **Teachers**   0.4905       1        0.5922  
-
- **Students**   0.7324     0.5922       1     
-----------------------------------------------
+|         |   Parents|  Teachers|  Students|
+|:--------|---------:|---------:|---------:|
+|Parents  | 1.0000000| 0.4904652| 0.7324148|
+|Teachers | 0.4904652| 1.0000000| 0.5922487|
+|Students | 0.7324148| 0.5922487| 1.0000000|
 
 The communication score (Table 3) shows the lowest correlations between correspondent groups compared to the other survey results. In particular, the correlation between student and teacher response is quite low. Taking a look at this further (in Figure 3), it can be seen that teacher responses are often lower than the corresponding student response.
 
@@ -197,5 +168,5 @@ The communication score (Table 3) shows the lowest correlations between correspo
 
 Suggestions for future work include:
 
-- Comparison of survey results with high school graduation rates and other demographic data, including poverty level.
-- A detailed look at the highest and lowest scoring schools.
+* Comparison of survey results with high school graduation rates and other demographic data, including poverty level.
+* A detailed look at the highest and lowest scoring schools.
