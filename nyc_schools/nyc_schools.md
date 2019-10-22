@@ -13,6 +13,7 @@ The datasets used in this analysis were obtained from:
 
 Data was imported into R as dataframes using:
 
+
 ```r
 demographic <- read_csv('combined.csv')
 gened_survey <- read_tsv('masterfile11_gened_final.txt')
@@ -62,7 +63,7 @@ combined <- combined %>%
 
 ## Exploratory Data Analysis
 
-#### Correlation between survey results and academic success metrics
+### Correlation between survey results and academic success metrics
 
 To investigate whether student, teacher and parent perceptions of NYC school quality are related to academic success metrics (average SAT scores), a correlation matrix was constructed to look for relationships in the combined dataset.
 
@@ -99,14 +100,15 @@ Scatter plots were created to visualize these correlations (Figure 1). From the 
 
 **Figure 1. Correlation between average SAT scores and perceived quality in NYC high schools according to survey results.**
 
-#### Effect of school location on survey results
+### Effect of school location on survey results
 
 Violin plots (Figure 2) were constructed to visualize the variation in total survey scores (combination of student, teacher and parent responses) across different NYC boroughs. From the plots, it can be seen that Staten Island schools typically received high quality scores. Schools in Brooklyn had the greatest spread in survey responses, and also some of the lowest quality scores. 
 
 <img src="images/img-SurveyScoresByBorough-1.png" style="display: block; margin: auto;" />
+
 **Figure 2. Total survey scores (combination of student, teacher and parent responses) in different NYC boroughs.**
 
-#### Differences in perceived quality between respondent groups
+### Differences in perceived quality between respondent groups
 
 To assess if there are any differences in perceived school quality between the various respondent groups (parents, teachers, students), several correlation matrices were constructed (one for each survey category).
 
@@ -162,6 +164,7 @@ corr_saf <- create_corr("Safety.and.Respect")
 The communication score (Table 3) shows the lowest correlations between correspondent groups compared to the other survey results. In particular, the correlation between student and teacher response is quite low. Taking a look at this further (in Figure 3), it can be seen that teacher responses are often lower than the corresponding student response.
 
 <img src="images/img-StudentsTeachers-1.png" style="display: block; margin: auto;" />
+
 **Figure 3. Relationship between student and teacher responses in the communication survey questions.**
 
 ## Future Work

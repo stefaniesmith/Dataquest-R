@@ -78,7 +78,7 @@ combined <- combined %>%
 
 ## Exploratory Data Analysis
 
-#### Correlation between survey results and academic success metrics
+### Correlation between survey results and academic success metrics
 
 To investigate whether student, teacher and parent perceptions of NYC school quality are related to academic success metrics (average SAT scores), a correlation matrix was constructed to look for relationships in the combined dataset.
 
@@ -130,7 +130,7 @@ ggplot(data = combined_tidy %>%
 
 **Figure 1. Correlation between average SAT scores and perceived quality in NYC high schools according to survey results.**
 
-#### Effect of school location on survey results
+### Effect of school location on survey results
 
 Violin plots (Figure 2) were constructed to visualize the variation in total survey scores (combination of student, teacher and parent responses) across different NYC boroughs. From the plots, it can be seen that Staten Island schools typically received high quality scores. Schools in Brooklyn had the greatest spread in survey responses, and also some of the lowest quality scores. 
 
@@ -147,9 +147,10 @@ ggplot(data = combined_tidy %>%
   xlab("Borough") +
   ylab("Survey Score")
 ```
+
 **Figure 2. Total survey scores (combination of student, teacher and parent responses) in different NYC boroughs.**
 
-#### Differences in perceived quality between respondent groups
+### Differences in perceived quality between respondent groups
 
 To assess if there are any differences in perceived school quality between the various respondent groups (parents, teachers, students), several correlation matrices were constructed (one for each survey category).
 
@@ -201,6 +202,7 @@ ggplot(data = combined) +
   xlim(2, 10) +
   ylim(2, 10)
 ```
+
 **Figure 3. Relationship between student and teacher responses in the communication survey questions.**
 
 ## Future Work
